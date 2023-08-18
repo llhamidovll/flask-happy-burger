@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <style>
+    .meal-options {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .meal-option {
+      flex-basis: 30%;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .meal-option img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .meal-option p {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+
+  <h1 class="mt-4">Place Order</h1>
+  <p>Welcome, {{ username }}!</p>
+
+  <!-- Order options -->
+  <div class="meal-options">
+    {% for option in meal_options %}
+      <div class="meal-option">
+        <img src="{{ url_for('static', filename='images/' + option['image']) }}" alt="{{ option['name'] }} image">
+        <p>{{ option['name'] }}</p>
+        <form action="{{ url_for('order') }}" method="POST">
+          <input type="hidden" name="meal" value="{{ option['name'] }}">
+          <button type="submit" class="btn btn-primary">Order</button>
+        </form>
+      </div>
+    {% endfor %}
+  </div>
+
+  <!-- Show History button -->
+  <a href="{{ url_for('order_history') }}" class="btn btn-secondary">Show History</a>
+
+  <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
+{% endblock %}

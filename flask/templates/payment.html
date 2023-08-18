@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1 class="mt-4">Payment Methods</h1>
+  <p>Welcome, {{ username }}!</p>
+
+  <form action="{{ url_for('payment') }}" method="POST" class="mt-4">
+    <div class="mb-3">
+      <label for="payment_method" class="form-label">Payment Method</label>
+      <input type="text" class="form-control" id="payment_method" name="payment_method" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Payment Method</button>
+  </form>
+
+  <a href="{{ url_for('update_payment') }}" class="btn btn-secondary mt-3">Update Payment Method</a>
+{% endblock %}

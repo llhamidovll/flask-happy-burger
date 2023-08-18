@@ -1,0 +1,11 @@
+<!-- templates/meal_detail.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container mt-4">
+    <h1>{{ meal['name'] }}</h1>
+    <p>{{ meal['description'] }}</p>
+    <a href="{{ url_for('order') }}" class="btn btn-primary">Place Order</a>
+  </div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1 class="mt-4">Order History</h1>
+  <p>Welcome, {{ username }}!</p>
+
+  {% if orders %}
+    <ul class="list-group mt-4">
+      {% for order in orders %}
+        <li class="list-group-item">{{ order['meal'] }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No orders found.</p>
+  {% endif %}
+
+  <a href="{{ url_for('order') }}" class="btn btn-primary">Place Order</a>
+  <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
+{% endblock %}
