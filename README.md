@@ -1,5 +1,5 @@
 
-# HappyBurger app Documentation
+# HungryBurger app Documentation
 
 ## Table of Contents
 
@@ -23,7 +23,7 @@
 
 ## Introduction
 
-HappyBurger ist a Flask-bases web application. Users can register, log in, order burgers, examine order history, and manage payment methods on the Flask-based HuppyBurger Website. Users can engage with the application's user-friendly and intuitive UI.
+HungryBurger ist a Flask-bases web application. Users can register, log in, order burgers, examine order history, and manage payment methods on the Flask-based HuppyBurger Website. Users can engage with the application's user-friendly and intuitive UI.
 
 ## Getting Started
 
